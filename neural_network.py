@@ -28,7 +28,7 @@ print(train_set.head())
 x, y = train_set.drop(columns=['verso']), train_set['verso']
 x = x.drop(columns=['timestamp'])
 
-x = fit_transform(y)
+# x = fit_transform(y)
 
 x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.15, random_state=88, shuffle=True, stratify=y)
 
