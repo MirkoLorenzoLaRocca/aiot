@@ -1,4 +1,4 @@
-,timestamp,accX,accY,accZ,gyroX,gyroY,gyroZ,label,magnitude
+,timestamp,accX,accY,accZ,gyroX,gyroY,gyroZ,label,magnitude_acc
 0,2024-11-06 17:17:56,Start,,,,,,,
 1,2024-11-06 17:17:56,-1.62,-5.35,0.18,0.03,0.0,-0.0,in movimento,5.592790001421473
 2,2024-11-06 17:17:56,-1.54,-5.18,0.16,0.0,-0.03,-0.0,in movimento,5.406440603576441
