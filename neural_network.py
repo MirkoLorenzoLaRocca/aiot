@@ -4,6 +4,9 @@
 #from keras.src.callbacks import EarlyStopping
 #import matplotlib.pyplot as plt
 #import numpy as np
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.model_selection import train_test_split
+from sklearn.metrics import accuracy_score
 import pandas as pd
 
 #path
@@ -20,3 +23,7 @@ train_set = pd.concat([df1, df2, df3, df4])
 
 # Controllo concat
 print(train_set.head())
+
+x, y = train_set.drop(columns=['verso']), train_set['verso']
+
+x_train, x_test, y_train, y_test = train_test_split(x, y, 0.15, random_state=88, shuffle=True, stratify=y)
