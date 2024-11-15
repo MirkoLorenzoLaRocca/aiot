@@ -27,3 +27,8 @@ print(train_set.head())
 x, y = train_set.drop(columns=['verso']), train_set['verso']
 
 x_train, x_test, y_train, y_test = train_test_split(x, y, 0.15, random_state=88, shuffle=True, stratify=y)
+
+random_forest = RandomForestClassifier(
+    n_estimators=200,
+    criterion = 'entropy',
+    oob_score=True)
