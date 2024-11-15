@@ -7,6 +7,7 @@
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import accuracy_score
+from sklearn.
 import pandas as pd
 
 #path
@@ -25,10 +26,16 @@ train_set = pd.concat([df1, df2, df3, df4])
 print(train_set.head())
 
 x, y = train_set.drop(columns=['verso']), train_set['verso']
+x = x.drop(columns=['timestamp'])
 
-x_train, x_test, y_train, y_test = train_test_split(x, y, 0.15, random_state=88, shuffle=True, stratify=y)
+x = fit_transform(y)
+
+x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.15, random_state=88, shuffle=True, stratify=y)
 
 random_forest = RandomForestClassifier(
-    n_estimators=200,
+    n_estimators=100,
     criterion = 'entropy',
     oob_score=True)
+
+random_forest.fit(x_train, y_train)
+
